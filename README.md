@@ -36,7 +36,7 @@ public static void main(String[] args) {
 }
 ```
 
-# Sendind a Request to the Client
+# Sending a Request to the Client
 Inside your request handler, there is a ClientSocket which is passed in. This can be used to send requests.
 
 ```java
