@@ -78,7 +78,7 @@ Server.authenticationString = "d4cUdx73__s2ci";		// keep this complex!
 server.rh = new RequestHandler() {
 	@Override
 	public void run(String requestString, ClientSocket socket) {
-	        boolean authState, destoryState;
+		boolean authState, destroyState = false;
 		if(!(authState = socket.isAuthenticated())) destroyState = socket.authenticate(requestString);
 		if(!destroyState) ServerBuilder.removeSocket(socket);		// fake client, disconnect it
 		if(authState) {
