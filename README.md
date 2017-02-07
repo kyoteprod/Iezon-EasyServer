@@ -70,3 +70,26 @@ outputStream.println("foo");
 BufferedReader inputStream = new BufferedReader(new InputStream(socket.getInputStream()));
 System.out.println(inputStream.readLine()); // will return bar following the example
 ```
+# One-Factor Authentication - Stopping fake Clients
+This is only a quick fix which you can add to your request handler in the Server, it means that the first request being sent must come from a known client Auth. On the Server you can add this:
+
+public static String authenticationString = "d4cUdx73__s2ci";		// keep this complex! (found in Server.java)
+server.rh = new RequestHandler() {
+	@Override
+	public void run(String requestString, ClientSocket socket) {
+	        boolean authState;
+		boolean destoryState;
+		if(!(authState = socket.isAuthenticated())) destroyState = socket.authenticate(requestString);
+		if(!destroyState) ServerBuilder.removeSocket(socket);
+		if(authState) {
+			// TODO: handle request
+		}
+	}
+};
+
+Inside the client, after you establish a connection, send the authenticationString over to the Server:
+
+```java
+PrintWriter outputStream = new PrintWriter(new Socket("ip_address", 4444).getOutputStream(), true);
+outputStream.println("d4cUdx73__s2ci");		// your complex authentication string (found in Server.java)
+```
