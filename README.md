@@ -36,6 +36,7 @@ public static void main(String[] args) {
 		@Override
 		public void run(String requestString, ClientSocket socket) {
 			// TODO: handle the request
+			if(requestString.equals("foo")) System.out.println("Bar");
 			return;
 		}
 	};
