@@ -1,4 +1,6 @@
 # Iezon-EasyServer (c)
+![Build](https://travis-ci.org/kyoteprod/Iezon-EasyServer.svg?branch=master "Build")
+
 Easy to implement Server created by Iezon (tm). Copyright (c) 2017 Kyle Thomas, All Rights Reserved.
 
 # Installation Instructions
