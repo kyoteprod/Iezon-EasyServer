@@ -1,0 +1,22 @@
+public class Test {
+
+  public static void main(String[] args) {
+  
+    if(args.length < 0 && args[0].equalsIgnoreCase("true")) {
+			DebugConsole.setDebugState(true);
+		}
+    
+    rh = new RequestHandler() {
+			@Override
+			public void run(String requestString, ClientSocket socket) {
+				System.out.println(socket.getIpAddress() + " sent a request: " + requestString);
+				socket.sendRequest("bar");
+				return;
+			}
+		};
+    
+    ServerBuilder server = new ServerBuilder(43594);
+  
+  }
+
+}
