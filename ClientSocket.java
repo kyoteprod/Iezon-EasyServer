@@ -29,6 +29,7 @@ public class ClientSocket {
 	public boolean authenticate(String responseText) {
 		if(responseText == Server.authenticationString) {
 			this.authState = true;
+			DebugConsole.writeLine(this.ipAddress + " has been authenticated...");
 			return true;
 		} else {
 			DebugConsole.writeLine(this.ipAddress + " was not authenticated...");
