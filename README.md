@@ -74,7 +74,7 @@ System.out.println(inputStream.readLine()); // will return bar following the exa
 This is only a quick fix which you can add to your request handler in the Server, it means that the first request being sent must come from a known client Auth. On the Server you can add this:
 
 ```java
-public static String authenticationString = "d4cUdx73__s2ci";		// keep this complex! (found in Server.java)
+Server.authenticationString = "d4cUdx73__s2ci";		// keep this complex!
 server.rh = new RequestHandler() {
 	@Override
 	public void run(String requestString, ClientSocket socket) {
@@ -92,5 +92,5 @@ Inside the client, after you establish a connection, send the authenticationStri
 
 ```java
 PrintWriter outputStream = new PrintWriter(new Socket("ip_address", 4444).getOutputStream(), true);
-outputStream.println("d4cUdx73__s2ci");		// your complex authentication string (found in Server.java)
+outputStream.println("d4cUdx73__s2ci");		// your complex authentication string
 ```
