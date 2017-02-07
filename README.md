@@ -1,5 +1,5 @@
 # Iezon-EasyServer (c)
-Easy to implement Server created by Iezon (c). Copyright (c) 2017 Iezon, All Rights Reserved.
+Easy to implement Server created by Iezon (tm). Copyright (c) 2017 Kyle Thomas, All Rights Reserved.
 
 # Installation Instructions
 Please find enclosed the MIT Liscence before continuing with this instillation.
