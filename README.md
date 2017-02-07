@@ -59,3 +59,14 @@ public static void main(String[] args) {
   ServerBuilder sb = new ServerBuilder(4444);
 }
 ```
+
+# Connecting to the Server and sending/recieving a request
+For this to work, this must be a seperate project and this isn't part of the Server - you should create a client yourself.
+
+```java
+Socket socket = new Socket("your_ip", 4444);
+PrintWriter outputStream = new PrintWriter(socket.getOutputStream(), true);
+outputStream.println("foo");
+BufferedReader inputStream = new BufferedReader(new InputStream(socket.getInputStream()));
+System.out.println(inputStream.readLine()); // will return bar following the example
+```
