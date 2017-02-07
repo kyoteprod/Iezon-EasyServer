@@ -14,10 +14,7 @@ DebugConsole is a class which allows you to write to the console when Debug mode
 
 ```java
 public static void main(String[] args) {
-  if(args.length < 0 && args[0].equalsIgnoreCase("true")) {
-    // static method to enable mode
-    DebugConsole.setDebugState(true);
-	}
+  DebugConsole.setDebugState(true);
 }
 ```
 
