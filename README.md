@@ -47,7 +47,7 @@ Inside your request handler, there is a ClientSocket which is passed in. This ca
 [...]
 	@Override
 	public void run(String requestString, ClientSocket socket) {
-		socket.sendRequest("foo");
+		socket.sendRequest("bar");
 	}
 ```
 
