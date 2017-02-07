@@ -80,7 +80,6 @@ server.rh = new RequestHandler() {
 	public void run(String requestString, ClientSocket socket) {
 		boolean authState, destroyState = false;
 		if(!(authState = socket.isAuthenticated())) destroyState = socket.authenticate(requestString);
-		if(!destroyState) ServerBuilder.removeSocket(socket);		// fake client, disconnect it
 		if(authState) {
 			// TODO: handle request
 		}
