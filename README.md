@@ -73,6 +73,7 @@ System.out.println(inputStream.readLine()); // will return bar following the exa
 # One-Factor Authentication - Stopping fake Clients
 This is only a quick fix which you can add to your request handler in the Server, it means that the first request being sent must come from a known client Auth. On the Server you can add this:
 
+```java
 public static String authenticationString = "d4cUdx73__s2ci";		// keep this complex! (found in Server.java)
 server.rh = new RequestHandler() {
 	@Override
@@ -86,6 +87,7 @@ server.rh = new RequestHandler() {
 		}
 	}
 };
+```
 
 Inside the client, after you establish a connection, send the authenticationString over to the Server:
 
