@@ -21,6 +21,12 @@ public static void main(String[] args) {
 }
 ```
 
+Once you have compiled your Server, you can access the args by running this command in your CMD window.
+
+```batch
+java -jar path/to/server.jar true
+```
+
 # Server Request Handler
 To rewrite the request handler, you must first access the Server class and Override its run method.
 
