@@ -26,13 +26,13 @@ To rewrite the request handler, you must first access the Server class and Overr
 
 ```java
 public static void main(String[] args) {
-  Server.rh = new RequestHandler() {
-			@Override
-			public void run(String requestString, ClientSocket socket) {
-				// TODO: handle the request
-				return;
-			}
-		};
+	Server.rh = new RequestHandler() {
+		@Override
+		public void run(String requestString, ClientSocket socket) {
+			// TODO: handle the request
+			return;
+		}
+	};
 }
 ```
 
@@ -41,10 +41,10 @@ Inside your request handler, there is a ClientSocket which is passed in. This ca
 
 ```java
 [...]
-   @Override
-		public void run(String requestString, ClientSocket socket) {
-      socket.sendRequest("foo");
-    }
+	@Override
+	public void run(String requestString, ClientSocket socket) {
+		socket.sendRequest("foo");
+	}
 ```
 
 # Running your Server
