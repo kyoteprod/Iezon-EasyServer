@@ -10,6 +10,7 @@ public class ClientSocket {
 	private PrintWriter outputStream;
 	private BufferedReader inputStream;
 	private String ipAddress;
+	private boolean authState = false;
 	
 	/**
 	 * Constructor method to instance the input and output streams.
@@ -22,6 +23,26 @@ public class ClientSocket {
 		this.outputStream = new PrintWriter(this.socket.getOutputStream(), true);
 		this.inputStream = new BufferedReader(new InputStreamReader(this.socket.getInputStream()));
 		this.ipAddress = this.socket.getRemoteSocketAddress().toString();
+		this.outputStream.println("test"); // sends a test
+	}
+	
+	public boolean authenticate(String responseText) {
+		if(responseText == Server.authenticationString) {
+			this.authState = true;
+			return true;
+		} else {
+			DebugConsole.writeLine(this.ipAddress + " was not authenticated...");
+			return false;
+		}
+	}
+	
+	/**
+	 * Check to see if the Client has been authenticated
+	 * @return Authentication State
+	 */
+	
+	public boolean isAuthenticated() {
+		return this.authState;
 	}
 	
 	/**
