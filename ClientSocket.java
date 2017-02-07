@@ -27,12 +27,12 @@ public class ClientSocket {
 	}
 	
 	public boolean authenticate(String responseText) {
-		if(responseText == Server.authenticationString) {
+		if(responseText.equalsIgnoreCase(Server.authenticationString)) {
 			this.authState = true;
-			DebugConsole.writeLine(this.ipAddress + " has been authenticated...");
+			DebugConsole.writeLine(this.ipAddress + " has been authenticated using " + Server.authenticationString + "...");
 			return true;
 		} else {
-			DebugConsole.writeLine(this.ipAddress + " was not authenticated...");
+			DebugConsole.writeLine(this.ipAddress + " ignored a request becuase it is not authenticated to + " + Server.authenticationString + "...");
 			return false;
 		}
 	}
